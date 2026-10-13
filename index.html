@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,8 +103,12 @@
         url: "./Week-2/index.html"
       },
       {
-        title: "Weeks 3 & 4",
-        url: "./Week-3-and-4/index.html"
+        title: "Week 3",
+        url: "./Week-3/index.html"
+      },
+      {
+        title: "Week 4",
+        url: "./Week-4/index.html"
       },
       {
         title: "Week 5",
@@ -142,10 +147,6 @@
         url: "./Week-13/index.html"
       },
       {
-        title: "Week 14",
-        url: "./Week-14/index.html"
-      },
-      {
         title: "Week 15",
         url: "./Week-15/index.html"
       }
@@ -163,11 +164,7 @@
       card.appendChild(title);
 
       const description = document.createElement("p");
-      description.textContent =
-        week.title === "Weeks 3 & 4"
-          ? "Combined Interactive IoT Learning Lab"
-          : "Interactive Learning Lab";
-
+      description.textContent = "Interactive Learning Lab";
       card.appendChild(description);
 
       const link = document.createElement("a");

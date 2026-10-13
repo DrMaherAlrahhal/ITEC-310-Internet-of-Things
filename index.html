@@ -35,6 +35,24 @@
       padding: 0 20px;
     }
 
+    .lab-section {
+      background: white;
+      border: 1px solid #dbe5f1;
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 35px;
+      box-shadow: 0 3px 12px #00000012;
+    }
+
+    .lab-section h2 {
+      margin-top: 0;
+    }
+
+    .lab-section p {
+      color: #52647b;
+      line-height: 1.6;
+    }
+
     .grid {
       display: grid;
       grid-template-columns:
@@ -67,6 +85,14 @@
       background: #065f69;
     }
 
+    .lab-button {
+      background: #1769aa;
+    }
+
+    .lab-button:hover {
+      background: #125489;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -84,8 +110,29 @@
   </header>
 
   <main>
+
+    <!-- Separate IoT Laboratory Section -->
+    <section class="lab-section">
+      <h2>IoT Laboratory</h2>
+
+      <p>
+        Explore 14 practical IoT laboratory activities
+        using Arduino, Raspberry Pi, sensors,
+        communication technologies, Tinkercad,
+        and real-world IoT applications.
+      </p>
+
+      <a class="button lab-button"
+         href="./IoT-Lab/index.html">
+        Open IoT Laboratory - 14 Labs
+      </a>
+    </section>
+
+    <!-- Weekly Learning Activities -->
     <h2>Weekly Learning Activities</h2>
+
     <div class="grid" id="weeks"></div>
+
   </main>
 
   <footer>

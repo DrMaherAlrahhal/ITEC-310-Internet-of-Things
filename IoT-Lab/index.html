@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITEC 310 — IoT Laboratory</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f2f5fa;color:#142c4c}header{background:linear-gradient(110deg,#164e63,#087e8b);color:#fff;text-align:center;padding:46px 20px}header h1{margin:0 0 12px;font-size:clamp(27px,4vw,42px)}header p{line-height:1.6}main{max-width:1150px;margin:36px auto;padding:0 20px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px}.back{color:#087e8b;font-weight:bold;text-decoration:none}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:18px}.card{background:white;padding:23px;border-radius:13px;box-shadow:0 3px 12px #00000012;border:1px solid #e1e9ef;display:flex;flex-direction:column;gap:12px}.card h2{margin:0;font-size:22px}.card p{margin:0;line-height:1.5;color:#475569;flex:1}.pill{color:#087e8b;font-size:12px;font-weight:bold;text-transform:uppercase;letter-spacing:1px}.soon{font-size:14px;color:#64748b;background:#edf2f6;border-radius:7px;padding:11px 14px;display:inline-block;align-self:flex-start}.button{background:#087e8b;color:white;text-decoration:none;font-weight:bold;border-radius:7px;padding:11px 14px;display:inline-block;align-self:flex-start}.button:hover{background:#06636d}footer{text-align:center;padding:32px;color:#64748b}
+</style>
+</head>
+<body>
+<header><h1>ITEC 310 — IoT Laboratory</h1><p>14 Practical Labs · Arduino · Raspberry Pi · Sensors · IoT Applications</p><p>Dr. Maher Alrahhal</p></header>
+<main><div class="top"><h2>Laboratory Activities</h2><a class="back" href="../index.html">← Back to IoT Course Homepage</a></div><div class="grid" id="labs"></div></main>
+<footer>ITEC 310 | Internet of Things Laboratory</footer>
+<script>
+const labs=[
+[1,"Introduction to Arduino / Raspberry Pi"],
+[2,"Manipulating an LED Using Raspberry Pi"],
+[3,"Remote Login to Raspberry Pi Using SSH"],
+[4,"Blinking an LED on Arduino"],
+[5,"LED Brightness Using PWM"],
+[6,"Measuring Ambient Temperature and Humidity"],
+[7,"Distance Detection Using an Ultrasonic Sensor"],
+[8,"Sending Sensor Data to a Smartphone via Bluetooth"],
+[9,"Home Security System Using a PIR Sensor"],
+[10,"Motor Simulation Using a Relay on Tinkercad"],
+[11,"Motor Simulation Using a Relay on Tinkercad"],
+[12,"Home Automation Using ESP8266 Wi-Fi"],
+[13,"MySQL on Raspberry Pi and SQL Queries"],
+[14,"Data Analysis and IoT"]
+];
+// Add lab numbers here once their index.html files are uploaded.
+const activeLabs=[];
+const container=document.getElementById('labs');
+labs.forEach(([number,name])=>{const card=document.createElement('article');card.className='card';const tag=document.createElement('span');tag.className='pill';tag.textContent='Practical activity';const title=document.createElement('h2');title.textContent=`Lab ${number}`;const desc=document.createElement('p');desc.textContent=name;card.append(tag,title,desc);if(activeLabs.includes(number)){const link=document.createElement('a');link.className='button';link.href=`./Lab-${number}/index.html`;link.textContent='Open Laboratory';card.append(link)}else{const label=document.createElement('span');label.className='soon';label.textContent='Coming Soon';card.append(label)}container.append(card)});
+</script>
+</body>
+</html>

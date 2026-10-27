@@ -1,41 +1,193 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>ITEC 310 - Internet of Things</title>
+
   <style>
-    * { box-sizing: border-box; }
-    :root { --navy:#142c4c; --teal:#087e8b; --blue:#1769aa; --muted:#52647b; --line:#dbe5f1; }
-    body { margin:0; font-family:Arial, sans-serif; background:#f2f5fa; color:var(--navy); }
-    header { background:linear-gradient(115deg,#164e63,#176b85); color:white; text-align:center; padding:45px 20px; }
-    header h1 { margin:0 0 15px; }
-    header p { margin:8px 0; }
-    main { max-width:1200px; margin:35px auto; padding:0 20px; }
-    .lab-section { background:white; border:1px solid var(--line); border-radius:14px; padding:28px; margin-bottom:35px; box-shadow:0 3px 12px #00000012; }
-    .lab-section h2 { margin-top:0; }
-    .lab-section p, .card p { color:var(--muted); line-height:1.6; }
-    .section-heading { margin:38px 0 20px; font-size:1.65rem; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px; }
-    .card { display:flex; flex-direction:column; background:white; padding:25px; border-radius:14px; border:1px solid #e3eaf2; border-top:4px solid var(--blue); box-shadow:0 3px 12px #00000012; min-height:225px; }
-    .card h2 { margin:0 0 12px; font-size:1.3rem; }
-    .card p { margin:0 0 20px; flex:1; }
-    .button { display:inline-block; align-self:flex-start; background:var(--teal); color:white; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:bold; transition:background .15s, transform .15s; }
-    .button:hover { background:#065f69; transform:translateY(-1px); }
-    .button:focus-visible { outline:3px solid #ffce55; outline-offset:3px; }
-    .lab-button, .assessment-card .button { background:#1769aa; }
-    .lab-button:hover, .assessment-card .button:hover { background:#125489; }
-    .assessment-card:nth-child(2) { border-top-color:#168c7b; }
-    .assessment-card:nth-child(3) { border-top-color:#8257bf; }
-    .assessment-card:nth-child(4) { border-top-color:#c47a24; }
-    .assessment-card:nth-child(5) { border-top-color:#178f94; }
-    .assessment-card:nth-child(6) { border-top-color:#b65a8b; }
-    .assessment-card .button { margin-top:auto; }
-    footer { text-align:center; padding:30px; color:#667; }
-    @media (max-width:600px) { header { padding:32px 16px; } main { padding:0 14px; } .lab-section { padding:22px; } .grid { grid-template-columns:1fr; } .card { min-height:unset; } }
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #142c4c;
+      --teal: #087e8b;
+      --blue: #1769aa;
+      --muted: #52647b;
+      --line: #dbe5f1;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f5fa;
+      color: var(--navy);
+    }
+
+    header {
+      background: linear-gradient(115deg, #164e63, #176b85);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    header h1 {
+      margin: 0 0 15px;
+    }
+
+    header p {
+      margin: 8px 0;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .lab-section {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 35px;
+      box-shadow: 0 3px 12px #00000012;
+    }
+
+    .lab-section h2 {
+      margin-top: 0;
+    }
+
+    .lab-section p,
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .section-heading {
+      margin: 38px 0 20px;
+      font-size: 1.65rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #e3eaf2;
+      border-top: 4px solid var(--blue);
+      box-shadow: 0 3px 12px #00000012;
+      min-height: 225px;
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      margin: 0 0 20px;
+      flex: 1;
+    }
+
+    .button {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--teal);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background .15s, transform .15s;
+    }
+
+    .button:hover {
+      background: #065f69;
+      transform: translateY(-1px);
+    }
+
+    .button:focus-visible {
+      outline: 3px solid #ffce55;
+      outline-offset: 3px;
+    }
+
+    .lab-button,
+    .assessment-card .button {
+      background: #1769aa;
+    }
+
+    .lab-button:hover,
+    .assessment-card .button:hover {
+      background: #125489;
+    }
+
+    .assessment-card:nth-child(2) {
+      border-top-color: #168c7b;
+    }
+
+    .assessment-card:nth-child(3) {
+      border-top-color: #8257bf;
+    }
+
+    .assessment-card:nth-child(4) {
+      border-top-color: #c47a24;
+    }
+
+    .assessment-card:nth-child(5) {
+      border-top-color: #178f94;
+    }
+
+    .assessment-card:nth-child(6) {
+      border-top-color: #b65a8b;
+    }
+
+    .assessment-card .button {
+      margin-top: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #667;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 32px 16px;
+      }
+
+      main {
+        padding: 0 14px;
+      }
+
+      .lab-section {
+        padding: 22px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: unset;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>ITEC 310 - Internet of Things</h1>
     <p>Interactive Learning Labs</p>
@@ -43,77 +195,192 @@
   </header>
 
   <main>
+
+    <!-- IoT Laboratory -->
     <section class="lab-section">
+
       <h2>IoT Laboratory</h2>
-      <p>Explore 14 practical IoT laboratory activities using Arduino, Raspberry Pi, sensors, communication technologies, Tinkercad, and real-world IoT applications.</p>
-      <a class="button lab-button" href="./IoT-Lab/index.html">Open IoT Laboratory - 14 Labs</a>
+
+      <p>
+        Explore practical IoT laboratory activities using
+        Arduino, Raspberry Pi, sensors, communication
+        technologies, Tinkercad, and real-world IoT applications.
+      </p>
+
+      <a class="button lab-button"
+         href="./IoT-Lab/index.html">
+        Open IoT Laboratory - 14 Labs
+      </a>
+
     </section>
 
+    <!-- Revision, Project and Assessments -->
     <section aria-labelledby="assessment-title">
-      <h2 class="section-heading" id="assessment-title">Revision, Project &amp; Assessments</h2>
+
+      <h2 class="section-heading" id="assessment-title">
+        Revision, Project &amp; Assessments
+      </h2>
+
       <div class="grid">
+
+        <!-- Quiz Revision -->
         <article class="card assessment-card">
+
           <h2>Revision for Quiz</h2>
-          <p>Review important IoT concepts and practice questions to prepare for the quiz.</p>
-          <a class="button" href="./Quiz-Revision/index.html">Open Quiz Revision</a>
+
+          <p>
+            Review important IoT concepts and practice
+            questions to prepare for the quiz.
+          </p>
+
+          <a class="button"
+             href="./Quiz-Revision/index.html">
+            Open Quiz Revision
+          </a>
+
         </article>
+
+        <!-- Midterm Revision -->
         <article class="card assessment-card">
+
           <h2>Revision for Midterm</h2>
-          <p>Practice written questions, MCQs, and True/False questions with model answers.</p>
-          <a class="button" href="./Revision%20for%20Midterm/index.html">Open Midterm Revision</a>
+
+          <p>
+            Practice written questions, MCQs, and
+            True/False questions with model answers.
+          </p>
+
+          <a class="button"
+             href="./Revision%20for%20Midterm/index.html">
+            Open Midterm Revision
+          </a>
+
         </article>
+
+        <!-- Project -->
         <article class="card assessment-card">
+
           <h2>Project</h2>
-          <p>Explore the IoT project requirements, instructions, and related activities.</p>
-          <a class="button" href="./Project/index.html">Open Project</a>
+
+          <p>
+            Explore IoT project requirements, instructions,
+            and related learning activities.
+          </p>
+
+          <a class="button"
+             href="./Project/index.html">
+            Open Project
+          </a>
+
         </article>
+
+        <!-- Lab Practical and Viva -->
         <article class="card assessment-card">
+
           <h2>Lab Practical and Viva</h2>
-          <p>Access the laboratory practical and viva preparation materials.</p>
-          <a class="button" href="https://drive.google.com/drive/u/0/folders/1dQd9ZkgXF7JmhFtErcRSCZtWY7EgQqGP" target="_blank" rel="noopener noreferrer">Open Lab Practical and Viva</a>
+
+          <p>
+            Access laboratory practical and viva
+            preparation materials.
+          </p>
+
+          <a class="button"
+             href="https://drive.google.com/drive/u/0/folders/1dQd9ZkgXF7JmhFtErcRSCZtWY7EgQqGP"
+             target="_blank"
+             rel="noopener noreferrer">
+            Open Lab Practical and Viva
+          </a>
+
         </article>
+
+        <!-- Lab Exam Revision -->
         <article class="card assessment-card">
+
           <h2>Revision for Lab Exam</h2>
-          <p>Review important laboratory skills and prepare for the practical examination.</p>
-          <a class="button" href="./Revision%20for%20Lab%20Exam/index.html">Open Lab Exam Revision</a>
+
+          <p>
+            Review laboratory skills and prepare
+            for the practical examination.
+          </p>
+
+          <a class="button"
+             href="./Revision%20for%20Lab%20Exam/index.html">
+            Open Lab Exam Revision
+          </a>
+
         </article>
+
+        <!-- Final Exam Revision -->
         <article class="card assessment-card">
+
           <h2>Revision for Final Exam</h2>
-          <p>Prepare for the final examination with revision materials and practice questions.</p>
-          <a class="button" href="./Revision%20for%20Final%20Exam/index.html">Open Final Exam Revision</a>
+
+          <p>
+            Prepare for the final examination
+            with revision materials and practice questions.
+          </p>
+
+          <a class="button"
+             href="./Revision%20for%20Final%20Exam/index.html">
+            Open Final Exam Revision
+          </a>
+
         </article>
+
       </div>
     </section>
 
+    <!-- Weekly Learning Activities -->
     <section aria-labelledby="weeks-title">
-      <h2 class="section-heading" id="weeks-title">Weekly Learning Activities</h2>
+
+      <h2 class="section-heading" id="weeks-title">
+        Weekly Learning Activities
+      </h2>
+
       <div class="grid" id="weeks"></div>
+
     </section>
+
   </main>
 
-  <footer>ITEC 310 | Internet of Things</footer>
+  <footer>
+    ITEC 310 | Internet of Things
+  </footer>
+
   <script>
-    const weeks = Array.from({length:14}, (_,i) => ({
-      title:`Week ${i+1}`,
-      url:`./Week-${i+1}/index.html`
+
+    // All 15 weeks
+    const weeks = Array.from({ length: 15 }, (_, i) => ({
+      title: `Week ${i + 1}`,
+      url: `./Week-${i + 1}/index.html`
     }));
-    const container = document.getElementById('weeks');
+
+    const container = document.getElementById("weeks");
+
     weeks.forEach(week => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      const title = document.createElement('h2');
+
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const title = document.createElement("h2");
       title.textContent = week.title;
       card.appendChild(title);
-      const description = document.createElement('p');
-      description.textContent = 'Interactive Learning Lab';
+
+      const description = document.createElement("p");
+      description.textContent = "Interactive Learning Lab";
       card.appendChild(description);
-      const link = document.createElement('a');
-      link.className = 'button';
+
+      const link = document.createElement("a");
+      link.className = "button";
       link.href = week.url;
-      link.textContent = 'Open Learning Lab';
+      link.textContent = "Open Learning Lab";
+
       card.appendChild(link);
       container.appendChild(card);
+
     });
+
   </script>
+
 </body>
 </html>
